@@ -1,0 +1,51 @@
+{
+    "environment": "development",
+    "production": {
+        "data": {
+            "provider": "mongodb",
+            "host": "ds029821.mongolab.com:29821",
+            "database": "test_public_junk",
+            "username": "test",
+            "password": "test"
+        },
+        "appSettings": {
+            "uploadDir": "/public/files",
+            "publicDir": "/public",
+            "sessionSecretSalt": "C#RdBL!nK",
+            "viewsDir": "/views",
+            "viewEngine": "jade"
+        }
+    },
+    "development": {
+        "data": {
+            "provider": "mongodb",
+            "host": "ds029821.mongolab.com:29821",
+            "database": "test_public_junk",
+            "username": "test",
+            "password": "test"
+        },
+        "appSettings": {
+            "uploadDir": "/public/files",
+            "publicDir": "/public",
+            "sessionSecretSalt": "C#RdBL!nK",
+            "viewsDir": "/views",
+            "viewEngine": "jade"
+        }
+    },
+    "staging": {
+        "data": {
+            "provider": "mongodb",
+            "host": "localhost:61949",
+            "database": "production",
+            "username": "test",
+            "password": "test"
+        },
+        "appSettings": {
+            "uploadDir": "/public/files",
+            "publicDir": "/public",
+            "sessionSecretSalt": "C#RdBL!nK",
+            "viewsDir": "/views",
+            "viewEngine": "jade"
+        }
+    }
+}
