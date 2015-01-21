@@ -1,18 +1,18 @@
 {
   "name": "Bloc-It-Off",
-  "description": "The web application portion of CardBlanc",
-  "version": "0.0.2",
+  "description": "A self-destructing tasklist.",
+  "version": "0.1",
   "engines": {
     "node": "latest"
   },
   "author": {
-    "name": "John O'Connor",
-    "email": "john@catalyzingconcepts.com"
+    "name": "Brian Prost",
+    "email": "bprost94@gmail.com"
   },
   "contributors": [
     {
-      "name": "John O'Connor",
-      "email": "john@catalyzingconcepts.com"
+    "name": "Brian Prost",
+    "email": "bprost94@gmail.com"
     }
   ],
   "dependencies": {
