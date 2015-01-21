@@ -6,4 +6,6 @@
 // require("./firebase-bio.js")
 
 var Firebase = require("firebase");
-var myFirebaseRef = new Firebase("https://bloc-it-off.firebaseio.com/");
+var bio-fb = new Firebase("https://bloc-it-off.firebaseio.com/");
+
+bio-fb.set({ name: "Brian Prost" });
