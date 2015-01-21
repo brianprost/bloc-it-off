@@ -3,8 +3,8 @@ html
     head
         title #{x('app-name')}
         block css
-            link(rel='stylesheet', href='/css/style.css', type="text/css", media="screen")
             link(rel='stylesheet', href='/css/materialize.min.css', type="text/css")
+            link(rel='stylesheet', href='/css/style.css', type="text/css", media="screen")
         block scripts
             script(type="text/javascript", src="/js/base.js")
             script(type="text/javascript", src="https://code.jquery.com/jquery-2.1.3.min.js")
@@ -13,10 +13,10 @@ html
     body
         nav
             div(class="nav-wrapper")
-                a(href="#" class="brand-logo") Logo
+                a(href="#" class="brand-logo") BlocItOff
                 ul(id="nav-mobile" class="right side-nav")
                     li
-                        a(href="#") In-Progress
+                        a(href="#" class="active") In-Progress
                     li
                         a(href="#") Ending Soon
                     li

@@ -1,16 +1,16 @@
 extends layout
 
 block content
-    h1 Congrats! You've created your first #{title} app.
-    p Ghiraldi is a new MVC framework for node.js.  Please feel free to contribute to the project on 
-        a(href="https://github.com/sax1johno/ghiraldi-framework") github
-        a(class="btn-floating btn-large waves-effect waves-red" href="#")
-    ul(id="dropdown2" class="dropdown-content")
-        li
-            a(href="#!") one
-                span(class="badge") 1
-        li
-            a(href="#!") two
-                span(class="new badge") 1
-    a(class="btn dropdown-button" href="#!" data-activates="dropdown2") Menu
-        i(class="mdi-navigation-arrow-drop-down right")
+    div(class="container")
+        div(class="bio-header")
+            h1(class="col s12") BlocItOff
+            h5 A tasklist focusing on what matters...
+        ul(id="dropdown2" class="dropdown-content")
+            li
+                a(href="#!") one
+                    span(class="badge") 1
+            li
+                a(href="#!") two
+                    span(class="new badge") 1
+        a(class="btn dropdown-button" href="#!" data-activates="dropdown2") Menu
+            i(class="mdi-navigation-arrow-drop-down right")
