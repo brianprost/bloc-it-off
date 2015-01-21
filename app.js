@@ -44,6 +44,3 @@ require('./mvc').boot(app, function(bootParams) {
         console.log("ghiraldi app failed to start: " + bootParams.errors);
     }
 });
-
-var Firebase = require("firebase");
-var myFirebaseRef = new Firebase("https://bloc-it-off.firebaseio.com/");
