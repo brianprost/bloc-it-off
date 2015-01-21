@@ -4,9 +4,9 @@
  **/
 
 // require("./firebase-bio.js")
-
-var Firebase = require("firebase");
+var Firebase = require('firebase');
 var bioFB = new Firebase("https://bloc-it-off.firebaseio.com/");
+bioFB.set({name: "Brian Prost"})
 
 bioFB.on("value", function(data) {
   var name = data.val() ? data.val().name : "";

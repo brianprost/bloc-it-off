@@ -39,8 +39,8 @@ require('./mvc').boot(app, function(bootParams) {
         //     res.header('Access-Control-Allow-Origin', '*');
         // });
         app.listen(bootParams.port);
-        console.log('ghiraldi app started on port ' + bootParams.port);
+        console.log('Bloc-It-Off started on port ' + bootParams.port);
     } else {
-        console.log("ghiraldi app failed to start: " + bootParams.errors);
+        console.log("Bloc-It-Off failed to start: " + bootParams.errors);
     }
 });

@@ -4,9 +4,23 @@ html
         title #{x('app-name')}
         block css
             link(rel='stylesheet', href='/css/style.css', type="text/css", media="screen")
+            link(rel='stylesheet', href='/css/materialize.min.css', type="text/css")
         block scripts
             script(type="text/javascript", src="/js/base.js")
+            script(type="text/javascript", src="https://code.jquery.com/jquery-2.1.3.min.js")
+            script(type="text/javascript", src="/js/materialize.min.js")
+            // script(type="text/javascript", src="/bower_components/jquery/src/jquery.js")
     body
+        nav
+            div(class="nav-wrapper")
+                a(href="#" class="brand-logo") Logo
+                ul(id="nav-mobile" class="right side-nav")
+                    li
+                        a(href="#") In-Progress
+                    li
+                        a(href="#") Ending Soon
+                    li
+                        a(href="#") Expired
         block messages
         block content
     block userScripts
