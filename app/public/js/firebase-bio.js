@@ -1,1 +1,0 @@
-console.log("firebase-bio.js has been compiled into app.js");

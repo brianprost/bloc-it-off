@@ -44,3 +44,4 @@ require('./mvc').boot(app, function(bootParams) {
         console.log("Bloc-It-Off failed to start: " + bootParams.errors);
     }
 });
+
