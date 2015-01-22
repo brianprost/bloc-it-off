@@ -1,1 +1,1 @@
-console.log("this is working");
+console.log("firebase-bio.js has been compiled into app.js");

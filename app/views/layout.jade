@@ -3,8 +3,9 @@ html
     head
         title #{x('app-name')}
         meta(name="theme-color" content="#ee6e73")
+        link(rel="icon", type="favicon", href="/assets/favicon.ico")
         block css
-            link(rel='stylesheet', href='/css/materialize.min.css', type="text/css")
+            link(rel='stylesheet', href='/css/materialize.min.css', type="text/css", media="screen")
             link(rel='stylesheet', href='/css/style.css', type="text/css", media="screen")
         block scripts
             script(type="text/javascript", src="/js/base.js")
@@ -16,7 +17,7 @@ html
             div(class="nav-wrapper")
                 a(href="#" class="brand-logo") BlocItOff
                 ul(id="nav-mobile" class="right side-nav")
-                    li( class="active")
+                    li(class="active")
                         a(href="#") In-Progress
                     li
                         a(href="#") Ending Soon
