@@ -1,3 +1,7 @@
 .bio-header {
     text-align: center;
 }
+
+nav .brand-logo {
+    padding: 0px 50px;
+}
