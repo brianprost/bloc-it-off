@@ -1,7 +1,7 @@
 {
   "name": "Bloc-It-Off",
   "description": "A self-destructing tasklist.",
-  "version": "0.1",
+  "version": "0.0.1",
   "engines": {
     "node": "latest"
   },
@@ -34,6 +34,7 @@
     "q": "*",
     "request": "*",
     "sprintf": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "express-compile-sass": "*"
   }
 }
