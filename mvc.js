@@ -20,8 +20,8 @@ var fs = require('fs'),
     locales = require('./locales'),
     flash = require('connect-flash'),
     MemStore = express.session.MemoryStore,
+    compileSass = require('express-compile-sass'),
     environment = process.env.ENV;
-    compileSass = require('express-compile-sass');
     
 require('coffee-script');
 
@@ -127,11 +127,12 @@ function bootFramework(app, completeFn) {
   app.set('views', __dirname + '/app/views'); 
   app.set('view engine', 'jade');
   app.use(compileSass({
-    root: __dirname + '/app/public',
+    root: __dirname + '/app/public/css',
     sourcemap: true, // Includes source url comments in output css
     watchFiles: true, // Watches sass files and updates mtime on main files for each change
     logToConsole: false // If true, will log to console.error on errors
     }));
+    
   completeFn();
 }
 

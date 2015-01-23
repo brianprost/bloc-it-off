@@ -6,13 +6,12 @@ html(ng-app)
         link(rel="icon", type="favicon", href="/assets/favicon.ico")
         block css
             link(rel='stylesheet', href='/css/materialize.min.css', type="text/css", media="screen")
-            link(rel='stylesheet', href='/css/style.scss', type="text/css", media="screen")
+            // link(rel='stylesheet', href='/css/style.css', type="text/css")
         block scripts
-            script(type="text/javascript", src="https://cdn.firebase.com/js/client/2.1.1/firebase.js")
-            script(type="text/javascript", src="/js/bower_components/jquery/dist/jquery.min.js")
-            script(type='text/javascript', src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.js")
+            script(type="text/javascript", src="//code.jquery.com/jquery-1.11.2.min.js")
             script(type="text/javascript", src="/js/bower_components/angular/angular.min.js")
             script(type="text/javascript", src="/js/materialize.min.js")
+            script(type="text/javascript", src="/js/bower_components/angularfire/dist/angularfire.min.js")
     body
         nav
             div(class="nav-wrapper light-blue")
