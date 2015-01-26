@@ -18,6 +18,10 @@ var signup = function(req, res) {
     res.render('signup.jade', {title: 'Sign Up'})
 }
 
+var endingSoon = function(req, res) {
+    res.render('ending-soon.jade', {title: 'Ending Soon'})
+}
+
 module.exports = {
     routes: [
         { 
@@ -29,6 +33,11 @@ module.exports = {
             verb: 'get',
             route: '/signup',
             method: signup
+        },
+        {
+            verb: 'get',
+            route: '/ending-soon',
+            method:  endingSoon
         }
     ]
 };
