@@ -37,11 +37,11 @@ BlocItOff.controller("index", function($scope) {
 
 BlocItOff.controller("signup", function($scope, $firebase) {
     var ref = new Firebase("https://bloc-it-off.firebaseio.com/");
-    ref.authWithOAuthPopup("facebook", function(error, authData) {
-        if (error) {
-            console.log("Login Failed!", error);
-        } else {
-            console.log("Authenticated successfully with payload:", authData);
-        }
-    })
+    // ref.authWithOAuthPopup("facebook", function(error, authData) {
+    //     if (error) {
+    //         console.log("Login Failed!", error);
+    //     } else {
+    //         console.log("Authenticated successfully with payload:", authData);
+    //     }
+    // })
 })
