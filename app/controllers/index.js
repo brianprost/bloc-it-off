@@ -14,12 +14,21 @@ var index = function(req, res) {
     res.render('index.jade', {title: 'Bloc-It-Off'});
 };
 
+var signup = function(req, res) {
+    res.render('signup.jade', {title: 'Sign Up'})
+}
+
 module.exports = {
     routes: [
         { 
             verb: 'get',
             route: '/',
             method: index
+        },
+        {
+            verb: 'get',
+            route: '/signup',
+            method: signup
         }
     ]
 };

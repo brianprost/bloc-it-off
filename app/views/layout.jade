@@ -1,5 +1,5 @@
 doctype html
-html(ng-app)
+html(ng-app="BlocItOff")
     head
         title #{x('app-name')}
         meta(name="theme-color" content="#ee6e73")
@@ -10,7 +10,9 @@ html(ng-app)
         block scripts
             script(type="text/javascript", src="//code.jquery.com/jquery-1.11.2.min.js")
             script(type="text/javascript", src="/js/bower_components/angular/angular.min.js")
+            script(type="text/javascript", src="/js/bower_components/ui-router/release/angular-ui-router.min.js")
             script(type="text/javascript", src="/js/materialize.min.js")
+            script(src="https://cdn.firebase.com/js/client/2.0.4/firebase.js")
             script(type="text/javascript", src="/js/bower_components/angularfire/dist/angularfire.min.js")
     body
         nav
@@ -23,6 +25,8 @@ html(ng-app)
                         a(href="#") Ending Soon
                     li
                         a(href="#") Expired
+                    li
+                        a(ui-sref="signup") Sign Up
         block messages
         block content
     block userScripts
