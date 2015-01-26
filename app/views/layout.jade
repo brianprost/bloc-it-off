@@ -12,7 +12,7 @@ html(ng-app="BlocItOff")
             script(type="text/javascript", src="/js/bower_components/angular/angular.min.js")
             script(type="text/javascript", src="/js/bower_components/ui-router/release/angular-ui-router.min.js")
             script(type="text/javascript", src="/js/materialize.min.js")
-            script(src="https://cdn.firebase.com/js/client/2.0.4/firebase.js")
+            script(type="text/javascript", src="https://cdn.firebase.com/js/client/2.0.4/firebase.js")
             script(type="text/javascript", src="/js/bower_components/angularfire/dist/angularfire.min.js")
     body
         nav
@@ -27,22 +27,8 @@ html(ng-app="BlocItOff")
                         a(href="#") Expired
                     li
                         a(ui-sref="signup") Sign Up
-        script
-            window.fbAsyncInit = function() {
-                FB.init({
-                  appId      : '792817280773457',
-                  xfbml      : true,
-                  version    : 'v2.2'
-                });
-            };
-            (function(d, s, id){
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {return;}
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
         block messages
         block content
     block userScripts
         script(type="text/javascript", src="/js/base.js")
+        script(type="text/javascript", src="/js/fb-auth.js")
