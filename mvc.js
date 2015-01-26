@@ -20,6 +20,7 @@ var fs = require('fs'),
     locales = require('./locales'),
     flash = require('connect-flash'),
     MemStore = express.session.MemoryStore,
+    // SASS compilation still isn't implemented
     compileSass = require('express-compile-sass'),
     environment = process.env.ENV;
     

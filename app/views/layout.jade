@@ -18,15 +18,11 @@ html(ng-app="BlocItOff")
         nav
             div(class="nav-wrapper light-blue")
                 a(href="#" class="brand-logo") BlocItOff
-                ul(id="nav-mobile" class="right side-nav")
-                    li(class="active")
-                        a(href="#") In-Progress
-                    li
-                        a(href="#") Ending Soon
-                    li
-                        a(href="#") Expired
-                    li
+                div(class="right side-nav" role='navigation')
+                    // Put something here...
+                    ul
                         a(ui-sref="signup") Sign Up
+                    
         block messages
         block content
     block userScripts
