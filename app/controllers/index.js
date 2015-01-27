@@ -18,18 +18,6 @@ var signup = function(req, res) {
     res.render('signup.jade', {title: 'Sign Up'})
 }
 
-var endingSoon = function(req, res) {
-    res.render('ending-soon.jade', {title: 'Ending Soon'})
-}
-
-var inProgress = function(req, res) {
-    res.render('in-progress.jade', {title: 'In Progress'})
-}
-
-var expired = function(req, res) {
-    res.render('expired.jade', {title: 'Expired'})
-}
-
 module.exports = {
     routes: [
         { 
@@ -41,21 +29,6 @@ module.exports = {
             verb: 'get',
             route: '/signup',
             method: signup
-        },
-        {
-            verb: 'get',
-            route: '/ending-soon',
-            method:  endingSoon
-        },
-        {
-            verb: 'get',
-            route: '/in-progress',
-            method:  inProgress
-        },
-        {
-            verb: 'get',
-            route: '/expired',
-            method:  expired
         }
     ]
 };
