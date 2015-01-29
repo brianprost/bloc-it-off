@@ -9,9 +9,12 @@ var BlocItOff = angular.module("BlocItOff", [
 ]);
 
 BlocItOff.controller("FRBcontroller", function($scope, $firebase) {
-    var ref = new Firebase("https://bloc-it-off.firebaseio.com/");
+    var ref = new Firebase("https://bloc-me-off.firebaseio.com/");
     var sync = $firebase(ref);
     ref.set({name: 'Brian Prost'});
+    ref.$save({
+        
+    })
     console.log('firebase');
 })
 

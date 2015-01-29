@@ -1,7 +1,11 @@
 extends layout
 
 block content
-    div(class="row")
+    div(class="row" ng-controller="FRBcontroller")
         div(class="col s12")
             ul(class="tabs")
+        a
+            div(class="btn-floating btn-large waves-effect waves-light red")
+                i(class="mdi-content-add")
+                    
     div(ui-view)
