@@ -1,10 +1,15 @@
-div(class="container")
-    div(ng-controller="tasks")
-        ul
-            li(ng-repeat="todo in todos")
-                input(class="col s6" type="checkbox" ng-model="todo.done" id="test5")
-                span(ng-class="{'done':todo.done}") {{todo.title}}
-        form(name="addTaskForm" ng-submit="addTodo()")
-            input(type="text" name="newtodo" ng-model="newtodo")
-            button(ng-disabled="addTaskForm.$invalid") Go
-        button(ng-click="clearCompleted()") Clear Completed
+div(class="container" ng-controller="tasks")
+    form(name="addTaskForm")
+        div
+            input(type="text" name="todoNameField" ng-model="todoName" placeholder="Add new task" class="form-control" ng-keyup="($event.keyCode == 13) ? addItem() : return" style="margin-bottom: 10px")
+            button(ng-click="addItem()" ng-hide="addTaskForm.$invalid" class="btn btn-primary" type="button") Save Task
+    div(ng-repeat="item in todos" class="list-group-item row")
+        div(class="col s6")
+            span(class="glyphicon glyphicon-thumbs-up" ng-show="item.completed")
+            span {{item.name}}
+            small(class="text-warning") [ {{item.id}} ]
+        div(class="col s6")
+            a(class="btn btn-danger" ng-click="removeItem($index, item, $event)")
+                i(class="icon-remove-sign") Delete
+            a(class="btn btn-warning" ng-click="changeStatus(item)")
+                i(class="icon-remove-sign") Change Status

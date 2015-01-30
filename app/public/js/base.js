@@ -8,27 +8,44 @@ var BlocItOff = angular.module("BlocItOff", [
     'ui.router'
 ]);
 
-BlocItOff.controller("tasks", function($scope, $firebase) {
-    // var FRBlist = new Firebase("https://bloc-me-off.firebaseio.com/");
-    // var sync = $firebase(FRBlist);
-    // $scope.addItem = function(){
-    //     FRBlist.set({
-            
-    //     }); 
-    // };
-    $scope.todos = [
-        {'title':'Build a todo app','done':false}
-    ];
+BlocItOff.constant("FIREBASE_URL", "https://bloc-me-off.firebaseio.com/")
+
+BlocItOff.controller("tasks", function($scope, $firebase, FIREBASE_URL) {
+    var FRBlist = new Firebase(FIREBASE_URL);
+    $scope.todos = $firebase(FRBlist);
     
-    $scope.addTodo = function(){
-        $scope.todos.push({'title':$scope.newTodo,'done':false});
-        $scope.newTodo = '';
+    $scope.addItem = function() {
+        var timestamp = new Date().valueOf();
+        
+        var itemRef = new Firebase(FIREBASE_URL + timestamp);
+        
+        $firebase(itemRef).$set({
+            id: timestamp,
+            name: $scope.todoName,
+            completed: false
+        });
+        
+        $scope.todoName = "";
     };
-    $scope.clearCompleted = function(){
-        $scope.todos = $scope.todos.filter(function(item){
-            return !item.done;
+    
+    $scope.removeItem = function(index, item, event) {
+        if (item.id == undefined) return;
+        
+        $scope.todos.$remove(item.id);
+    }
+    
+    $scope.changeStatus = function(item){
+        var itemRef = new Firebase(FIREBASE_URL + item.id);
+        
+        // Update the item
+        $firebase(itemRef).$set({
+            id: item.id,
+            name: item.name,
+            completed: !item.completed
         });
     };
+    
+    
 });
 
 BlocItOff.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
@@ -61,7 +78,7 @@ BlocItOff.controller("index", function($scope) {
 });
 
 BlocItOff.controller("signup", function($scope, $firebase) {
-    var ref = new Firebase("https://bloc-it-off.firebaseio.com/");
+    var ref = new Firebase("https://bloc-me-off.firebaseio.com/");
     // ref.authWithOAuthPopup("facebook", function(error, authData) {
     //     if (error) {
     //         console.log("Login Failed!", error);
@@ -70,3 +87,4 @@ BlocItOff.controller("signup", function($scope, $firebase) {
     //     }
     // })
 });
+
