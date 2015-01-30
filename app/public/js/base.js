@@ -9,14 +9,20 @@ var BlocItOff = angular.module("BlocItOff", [
 ]);
 
 BlocItOff.controller("FRBcontroller", function($scope, $firebase) {
-    var ref = new Firebase("https://bloc-me-off.firebaseio.com/");
-    var sync = $firebase(ref);
-    ref.set({name: 'Brian Prost'});
-    ref.$save({
-        
-    })
-    console.log('firebase');
-})
+    // var FRBlist = new Firebase("https://bloc-me-off.firebaseio.com/");
+    // var sync = $firebase(FRBlist);
+    // $scope.addItem = function(){
+    //     FRBlist.set({
+            
+    //     }); 
+    // };
+    $scope.todos = [
+        {'title':'Build a todo app','done':false}
+    ];
+    
+    $scope.addTodo = function(){};
+    $scope.clearCompleted = function(){};
+});
 
 BlocItOff.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');
@@ -35,7 +41,10 @@ BlocItOff.config(['$urlRouterProvider', '$stateProvider', function($urlRouterPro
 }]);
 
 BlocItOff.controller("index", function($scope) {
-    
+    var GEN_TASK_NUMBER = function() {
+        var taskNum = Math.random();  
+        console.log(taskNum);
+    }
 })
 
 BlocItOff.controller("signup", function($scope, $firebase) {

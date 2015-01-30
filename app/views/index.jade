@@ -1,11 +1,14 @@
 extends layout
 
 block content
-    div(class="row" ng-controller="FRBcontroller")
-        div(class="col s12")
-            ul(class="tabs")
-        a
-            div(class="btn-floating btn-large waves-effect waves-light red")
-                i(class="mdi-content-add")
-                    
-    div(ui-view)
+    div(ng-controller="FRBcontroller")
+        form(name='frm' ng-submit="addTodo()")
+            input(type="text" name="newtodo" ng-model="newtodo" required)
+            button(ng-disabled="frm.$invalid") Go
+        button(ng-click="clearCompleted()") Clear Completed
+        ul(style="text-align: center")
+            li(ng-repeat="todo in todos")
+                input(type="checkbox" id="test5" ng-model="todo.done")
+                span(ng-class="{'done':todo.done}")
+                    {{todo.title}}
+    // div(ui-view)
