@@ -8,7 +8,7 @@ var BlocItOff = angular.module("BlocItOff", [
     'ui.router'
 ]);
 
-BlocItOff.controller("FRBcontroller", function($scope, $firebase) {
+BlocItOff.controller("tasks", function($scope, $firebase) {
     // var FRBlist = new Firebase("https://bloc-me-off.firebaseio.com/");
     // var sync = $firebase(FRBlist);
     // $scope.addItem = function(){
