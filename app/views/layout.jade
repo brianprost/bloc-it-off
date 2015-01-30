@@ -23,7 +23,10 @@ html(ng-app="BlocItOff")
                 div(class="right side-nav" role='navigation')
                     // Put something here...
                     ul
-                        a(ui-sref="signup") Sign Up
+                        li
+                            a(ui-sref="signup") Sign Up
+                        li
+                            a(ui-sref="tasks") Tasks
                     
         block messages
         block content

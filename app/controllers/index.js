@@ -18,6 +18,10 @@ var signup = function(req, res) {
     res.render('signup.jade', {title: 'Sign Up'})
 }
 
+var tasks = function(req, res) {
+    res.render('tasks.jade', {title: 'Tasks'})
+}
+
 module.exports = {
     routes: [
         { 
@@ -29,6 +33,11 @@ module.exports = {
             verb: 'get',
             route: '/signup',
             method: signup
+        },
+        {
+            verg: 'get',
+            route: '/tasks',
+            method: tasks
         }
     ]
 };

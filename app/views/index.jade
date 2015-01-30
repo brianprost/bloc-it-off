@@ -1,14 +1,4 @@
 extends layout
 
 block content
-    div(ng-controller="FRBcontroller")
-        form(name='frm' ng-submit="addTodo()")
-            input(type="text" name="newtodo" ng-model="newtodo" required)
-            button(ng-disabled="frm.$invalid") Go
-        button(ng-click="clearCompleted()") Clear Completed
-        ul(style="text-align: center")
-            li(ng-repeat="todo in todos")
-                input(type="checkbox" id="test5" ng-model="todo.done")
-                span(ng-class="{'done':todo.done}")
-                    {{todo.title}}
-    // div(ui-view)
+    div(ui-view)
