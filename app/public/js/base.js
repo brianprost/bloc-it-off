@@ -20,8 +20,15 @@ BlocItOff.controller("tasks", function($scope, $firebase) {
         {'title':'Build a todo app','done':false}
     ];
     
-    $scope.addTodo = function(){};
-    $scope.clearCompleted = function(){};
+    $scope.addTodo = function(){
+        $scope.todos.push({'title':$scope.newTodo,'done':false});
+        $scope.newTodo = '';
+    };
+    $scope.clearCompleted = function(){
+        $scope.todos = $scope.todos.filter(function(item){
+            return !item.done;
+        });
+    };
 });
 
 BlocItOff.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
@@ -30,12 +37,18 @@ BlocItOff.config(['$urlRouterProvider', '$stateProvider', function($urlRouterPro
     $stateProvider.state('index', {
         controller: 'index',
         templateUrl: '/index'
-    })
+    });
     
     $stateProvider.state('signup', {
         url: '/signup',
         controller: 'signup',
         templateUrl: '/signup'
+    });
+    
+    $stateProvider.state('tasks', {
+        url: '/tasks',
+        controller: 'tasks',
+        templateUrl: '/tasks'
     });
     
 }]);
@@ -44,8 +57,8 @@ BlocItOff.controller("index", function($scope) {
     var GEN_TASK_NUMBER = function() {
         var taskNum = Math.random();  
         console.log(taskNum);
-    }
-})
+    };
+});
 
 BlocItOff.controller("signup", function($scope, $firebase) {
     var ref = new Firebase("https://bloc-it-off.firebaseio.com/");
@@ -56,4 +69,4 @@ BlocItOff.controller("signup", function($scope, $firebase) {
     //         console.log("Authenticated successfully with payload:", authData);
     //     }
     // })
-})
+});

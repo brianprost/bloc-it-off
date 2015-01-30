@@ -35,7 +35,7 @@ module.exports = {
             method: signup
         },
         {
-            verg: 'get',
+            verb: 'get',
             route: '/tasks',
             method: tasks
         }

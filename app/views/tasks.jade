@@ -1,0 +1,10 @@
+div(class="container")
+    div(ng-controller="tasks")
+        ul
+            li(ng-repeat="todo in todos")
+                input(class="col s6" type="checkbox" ng-model="todo.done" id="test5")
+                span(ng-class="{'done':todo.done}") {{todo.title}}
+        form(name="addTaskForm" ng-submit="addTodo()")
+            input(type="text" name="newtodo" ng-model="newtodo")
+            button(ng-disabled="addTaskForm.$invalid") Go
+        button(ng-click="clearCompleted()") Clear Completed
