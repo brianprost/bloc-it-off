@@ -1,15 +1,16 @@
 div(class="container" ng-controller="tasks")
     form(name="addTaskForm")
-        div
-            input(type="text" name="todoNameField" ng-model="todoName" placeholder="Add new task" class="form-control" ng-keyup="($event.keyCode == 13) ? addItem() : return" style="margin-bottom: 10px")
-            button(ng-click="addItem()" ng-hide="addTaskForm.$invalid" class="btn btn-primary" type="button") Save Task
-    div(ng-repeat="item in todos" class="list-group-item row")
-        div(class="col s6")
-            span(class="glyphicon glyphicon-thumbs-up" ng-show="item.completed")
-            span {{item.name}}
-            small(class="text-warning") [ {{item.id}} ]
-        div(class="col s6")
-            a(class="btn btn-danger" ng-click="removeItem($index, item, $event)")
-                i(class="icon-remove-sign") Delete
-            a(class="btn btn-warning" ng-click="changeStatus(item)")
-                i(class="icon-remove-sign") Change Status
+        div(class="row")
+            div(class="input-field col s9")
+                input(class="validate" id="new_task_field" type="text" name="todoNameField" ng-model="todoName" ng-keyup="($event.keyCode == 13) ? addItem() : return")
+                label(for="new_task_field") Add new task
+            div(class="col s3 center-align")
+                button(class="btn waves-effect waves-light blue" ng-click="addItem()" ng-hide="addTaskForm.$invalid" type="button") Save Task
+                    i(class="mdi-content-send right")
+    div(class="collection" ng-repeat="item in todos")
+        ul(class="collection-item")
+            // span(class="glyphicon glyphicon-thumbs-up" ng-show="item.completed")
+            // span {{item.id}}
+            div {{item.name}}
+                a(class="secondary-content btn-floating btn-large waves-effect waves-light blue" ng-click="removeItem($removeItem($index, item, $event)")
+                    i(class="mdi-content-add")

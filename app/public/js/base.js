@@ -29,21 +29,21 @@ BlocItOff.controller("tasks", function($scope, $firebase, FIREBASE_URL) {
     };
     
     $scope.removeItem = function(index, item, event) {
-        if (item.id == undefined) return;
+        if (item.id == undefined)return;
         
         $scope.todos.$remove(item.id);
     }
     
-    $scope.changeStatus = function(item){
-        var itemRef = new Firebase(FIREBASE_URL + item.id);
+    // $scope.changeStatus = function(item){
+    //     var itemRef = new Firebase(FIREBASE_URL + item.id);
         
-        // Update the item
-        $firebase(itemRef).$set({
-            id: item.id,
-            name: item.name,
-            completed: !item.completed
-        });
-    };
+    //     // Update the item
+    //     $firebase(itemRef).$set({
+    //         id: item.id,
+    //         name: item.name,
+    //         completed: !item.completed
+    //     });
+    // };
     
     
 });
