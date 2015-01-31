@@ -7,10 +7,11 @@ div(class="container" ng-controller="tasks")
             div(class="col s3 center-align")
                 button(class="btn waves-effect waves-light blue" ng-click="addItem()" ng-hide="addTaskForm.$invalid" type="button") Save Task
                     i(class="mdi-content-send right")
-    div(class="collection" ng-repeat="item in todos")
-        ul(class="collection-item")
+    div(ng-repeat="item in todos")
+        ul(class="collection")
             // span(class="glyphicon glyphicon-thumbs-up" ng-show="item.completed")
             // span {{item.id}}
-            div {{item.name}}
-                a(class="secondary-content btn-floating btn-large waves-effect waves-light blue" ng-click="removeItem($removeItem($index, item, $event)")
-                    i(class="mdi-content-add")
+            li(class="collection-item")
+                div {{item.name}}
+                    a(class="secondary-content btn-floating btn-large waves-effect waves-light blue" ng-click="removeItem($removeItem($index, item, $event)")
+                        i(class="mdi-content-add")
